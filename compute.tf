@@ -1,11 +1,11 @@
 # lookup SSH public keys by name
 data "ibm_is_ssh_key" "ssh_pub_key" {
-  name = "${var.ssh_key_name}"
+  name = var.ssh_key_name
 }
 
 # lookup compute profile by name
 data "ibm_is_instance_profile" "instance_profile" {
-  name = "${var.instance_profile}"
+  name = var.instance_profile
 }
 
 # create a random password if we need it
@@ -17,7 +17,7 @@ resource "random_password" "password" {
 
 # lookup image name for a custom image in region if we need it
 data "ibm_is_image" "bigiq_custom_image" {
-  name = "${var.bigiq_image_name}"
+  name = var.bigiq_image_name
 }
 
 locals {
