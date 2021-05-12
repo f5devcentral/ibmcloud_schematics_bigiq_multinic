@@ -1,5 +1,5 @@
 data "ibm_is_subnet" "f5_managment_subnet" {
-  identifier = "${var.management_subnet_id}"
+  identifier = var.management_subnet_id
 }
 
 locals {
