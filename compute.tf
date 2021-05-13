@@ -23,10 +23,10 @@ data "ibm_is_image" "bigiq_custom_image" {
 locals {
   # set the user_data YAML template for each license type
   license_map = {
-    "none"         = "${file("${path.module}/user_data_no_license.yaml")}"
-    "bigiq_regkey" = "${file("${path.module}/user_data_license_only.yaml")}"
-    "regkeypool"   = "${file("${path.module}/user_data_license_regkey_pool.yaml")}"
-    "utilitypool"  = "${file("${path.module}/user_data_license_utility_pool.yaml")}"
+    "none"         = file("${path.module}/user_data_no_license.yaml")
+    "bigiq_regkey" = file("${path.module}/user_data_license_only.yaml")
+    "regkeypool"   = file("${path.module}/user_data_license_regkey_pool.yaml")
+    "utilitypool"  = file("${path.module}/user_data_license_utility_pool.yaml")
   }
 }
 
