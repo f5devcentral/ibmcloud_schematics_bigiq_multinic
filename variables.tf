@@ -6,12 +6,6 @@ variable "region" {
   default     = "us-south"
   description = "The VPC region to instatiate the F5 BIG-IQ instance"
 }
-# Present for CLI testng
-#variable "api_key" {
-#  type        = string
-#  default     = ""
-#  description = "IBM Public Cloud API KEY"
-#}
 
 ##################################################################################
 # instance_name - The name of the F5 BIG-IQ instance
@@ -20,6 +14,15 @@ variable "instance_name" {
   type        = string
   default     = "f5-bigiq-01"
   description = "The VPC Instance name"
+}
+
+##################################################################################
+# bigiq_custom_image - The custom VPC image to use for the F5 BIG-IQ instnace
+##################################################################################
+variable "bigiq_custom_image" {
+  type        = string
+  default     = ""
+  description = "The custom VPC image to use for the F5 BIG-IQ instance"
 }
 
 ##################################################################################

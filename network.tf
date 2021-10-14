@@ -3,7 +3,7 @@ data "ibm_is_subnet" "f5_managment_subnet" {
 }
 
 locals {
-  secondary_subnets = compact(list(var.data_1_1_subnet_id, var.data_1_2_subnet_id, var.data_1_3_subnet_id, var.data_1_4_subnet_id))
+  secondary_subnets = compact(tolist([var.data_1_1_subnet_id, var.data_1_2_subnet_id, var.data_1_3_subnet_id, var.data_1_4_subnet_id]))
 }
 
 resource "random_uuid" "namer" {}
