@@ -24,14 +24,4 @@ bigiq_playbooks:
     - name: license_regkey_pool
       vars:
         license_pool_name: ${license_pool_name}
-        license_offerings:
-          - ${license_offerings_1}
-          - ${license_offerings_2}
-          - ${license_offerings_3}
-          - ${license_offerings_4}
-          - ${license_offerings_5}
-          - ${license_offerings_6}
-          - ${license_offerings_7}
-          - ${license_offerings_8}
-          - ${license_offerings_9}
-          - ${license_offerings_10}
+        license_offerings: [${license_regkeys}]
