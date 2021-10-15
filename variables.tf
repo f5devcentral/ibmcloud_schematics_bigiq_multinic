@@ -8,6 +8,16 @@ variable "region" {
 }
 
 ##################################################################################
+# resource_group - The IBM Cloud resource group to create the F5 BIG-IQ instance
+##################################################################################
+variable "resource_group" {
+  type        = string
+  default     = "default"
+  description = "The IBM Cloud resource group to create the F5 BIG-IQ instance"
+}
+
+
+##################################################################################
 # instance_name - The name of the F5 BIG-IQ instance
 ##################################################################################
 variable "instance_name" {
@@ -30,7 +40,7 @@ variable "bigiq_custom_image" {
 ##################################################################################
 variable "bigiq_image_name" {
   type        = string
-  default     = ""
+  default     = "big-iq-7.1"
   description = "The image to be used when provisioning the F5 BIG-IQ instance"
 }
 
@@ -161,62 +171,8 @@ variable "license_utility_regkey" {
   description = "The BIG-IP utility pool regkey to create offerings to grant"
 }
 
-variable "license_offerings_1" {
-  type        = string
-  default     = "none"
-  description = "The BIG-IP regkey pool offering key"
-}
-
-variable "license_offerings_2" {
-  type        = string
-  default     = "none"
-  description = "The BIG-IP regkey pool offering key"
-}
-
-variable "license_offerings_3" {
-  type        = string
-  default     = "none"
-  description = "The BIG-IP regkey pool offering key"
-}
-
-variable "license_offerings_4" {
-  type        = string
-  default     = "none"
-  description = "The BIG-IP regkey pool offering key"
-}
-
-variable "license_offerings_5" {
-  type        = string
-  default     = "none"
-  description = "The BIG-IP regkey pool offering key"
-}
-
-variable "license_offerings_6" {
-  type        = string
-  default     = "none"
-  description = "The BIG-IP regkey pool offering key"
-}
-
-variable "license_offerings_7" {
-  type        = string
-  default     = "none"
-  description = "The BIG-IP regkey pool offering key"
-}
-
-variable "license_offerings_8" {
-  type        = string
-  default     = "none"
-  description = "The BIG-IP regkey pool offering key"
-}
-
-variable "license_offerings_9" {
-  type        = string
-  default     = "none"
-  description = "The BIG-IP regkey pool offering key"
-}
-
-variable "license_offerings_10" {
-  type        = string
-  default     = "none"
-  description = "The BIG-IP regkey pool offering key"
+variable "license_regkey_offerings" {
+  type        = list(string)
+  default     = []
+  description = "List of regkey pool offerings"
 }
