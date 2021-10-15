@@ -138,7 +138,7 @@ variable "phone_home_url" {
 # schematic template for phone_home_url_metadata
 ##################################################################################
 variable "template_source" {
-  default     = "jgruberf5/bigiq-cloudinit/demo/ibmcloud_vpc_gen2/schematics/bigiq_multi_nic"
+  default     = "f5devcentral/ibmcloud_schematics_bigiq_multinic"
   description = "The terraform template source for phone_home_url_metadata"
 }
 variable "template_version" {
