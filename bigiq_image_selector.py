@@ -6,7 +6,7 @@ import urllib.request
 import difflib
 
 PUBLIC_REGIONS = ['us-south', 'us-east', 'eu-gb',
-                  'eu-de', 'jp-tok', 'jp-osa', 'au-syd', 'ca-tor']
+                  'eu-de', 'jp-tok', 'jp-osa', 'au-syd', 'ca-tor', 'br-sao']
 
 
 def get_public_images(region):
@@ -56,7 +56,7 @@ def main():
     image_id = None
     for image in image_catalog[region]:
         match_length = longest_substr(image['image_name'], bigiq_version_match)
-        if match_length >= max_match:
+        if match_length > 0 and match_length >= max_match:
             max_match = match_length
             image_url = image['image_sql_url']
             image_name = image['image_name']
