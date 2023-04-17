@@ -40,7 +40,7 @@ variable "bigiq_custom_image" {
 ##################################################################################
 variable "bigiq_image_name" {
   type        = string
-  default     = "big-iq-7.1"
+  default     = "big-iq-8.3"
   description = "The image to be used when provisioning the F5 BIG-IQ instance"
 }
 
@@ -49,7 +49,7 @@ variable "bigiq_image_name" {
 ##################################################################################
 variable "instance_profile" {
   type        = string
-  default     = "bx2-4x16"
+  default     = "cx2-8x16"
   description = "The resource profile to be used when provisioning the F5 BIG-IQ instance"
 }
 
